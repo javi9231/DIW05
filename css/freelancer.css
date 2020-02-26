@@ -9738,6 +9738,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.social {
+  color: darkslategray;
+}
+
 .portfolio {
   margin-bottom: -30px;
 }
