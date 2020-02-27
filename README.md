@@ -3,6 +3,10 @@
 Aquí podrás saber de mi [web](https://javi9231.github.io/DIW05/).
 Si quieres ver el código [gitHub](https://github.com/javi9231/DIW05)
 
+Para generar los fichero hay que ejecutar en el directorio:
+`npm install`
+`npm start`
+
 ¿Te gusta el tema que he elegido?
 Aquí te lo puedes descargar es gratuito
 
