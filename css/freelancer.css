@@ -9742,6 +9742,17 @@ a.text-dark:hover, a.text-dark:focus {
   color: darkslategray;
 }
 
+.carousel .carousel-item {
+  height: 20em;
+}
+
+.carousel .carousel-item > *:first-child {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: inherit;
+}
+
 .portfolio {
   margin-bottom: -30px;
 }

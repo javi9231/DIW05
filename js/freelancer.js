@@ -1,15 +1,23 @@
 (function($) {
-  "use strict"; // Start of use strict
+  'use strict'; // Start of use strict
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (
+      location.pathname.replace(/^\//, '') ==
+        this.pathname.replace(/^\//, '') &&
+      location.hostname == this.hostname
+    ) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 71)
-        }, 1000, "easeInOutExpo");
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top - 71
+          },
+          1000,
+          'easeInOutExpo'
+        );
         return false;
       }
     }
@@ -38,10 +46,10 @@
 
   // Collapse Navbar
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
+    if ($('#mainNav').offset().top > 100) {
+      $('#mainNav').addClass('navbar-shrink');
     } else {
-      $("#mainNav").removeClass("navbar-shrink");
+      $('#mainNav').removeClass('navbar-shrink');
     }
   };
   // Collapse now if page is not at top
@@ -51,13 +59,32 @@
 
   // Floating label headings for the contact form
   $(function() {
-    $("body").on("input propertychange", ".floating-label-form-group", function(e) {
-      $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-    }).on("focus", ".floating-label-form-group", function() {
-      $(this).addClass("floating-label-form-group-with-focus");
-    }).on("blur", ".floating-label-form-group", function() {
-      $(this).removeClass("floating-label-form-group-with-focus");
-    });
+    $('body')
+      .on('input propertychange', '.floating-label-form-group', function(e) {
+        $(this).toggleClass(
+          'floating-label-form-group-with-value',
+          !!$(e.target).val()
+        );
+      })
+      .on('focus', '.floating-label-form-group', function() {
+        $(this).addClass('floating-label-form-group-with-focus');
+      })
+      .on('blur', '.floating-label-form-group', function() {
+        $(this).removeClass('floating-label-form-group-with-focus');
+      });
   });
 
+  $(function() {
+    $('.carousel .carousel-item[data-src]').each(function() {
+      var $this = $(this);
+
+      $this.prepend(
+        [
+          '<div style="background-image: url(',
+          $this.attr('data-src'),
+          ')"></div>'
+        ].join('')
+      );
+    });
+  });
 })(jQuery); // End of use strict
